@@ -1,0 +1,43 @@
+$light-background: #ffffff;
+$box-shadow: 2px 2px 24px -3px rgba(180, 180, 180, 0.2);
+$border-radius: 20px;
+$font-color: #4793ff;
+$text-color: #000000;
+$base-color: #939cb0;
+$body-background-dark: #0d1117;
+$body-background-light: #fff;
+$components-background-dark: #4f4f4f;
+$components-background-light: #fff;
+$text-color-light: #000;
+$text-color-dark: #fff;
+$card-background-light: #4793ff33;
+$card-background-dark: #2e3035;
+$card-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
+$card-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
+
+:root {
+  //body background
+  --body-background-dark: #{$body-background-dark};
+  --body-background-light: #{$body-background-light};
+  --body-background-default: var(#{--body-background-light});
+
+  //components-background
+  --components-background-dark: #{$components-background-dark};
+  --components-background-light: #{$components-background-light};
+  --components-background-default: var(#{--components-background-light});
+
+  //text-color
+  --text-color-light: #{$text-color-light};
+  --text-color-dark: #{$text-color-dark};
+  --text-color-default: var(#{--text-color-light});
+
+  //card-background
+  --card-background-light: #{$card-background-light};
+  --card-background-dark: #{$card-background-dark};
+  --card-background-default: var(#{--card-background-light});
+
+  //card-shadow
+  --card-shadow-light: #{$card-shadow-light};
+  --card-shadow-dark: #{$card-shadow-dark};
+  --card-shadow-default: var(#{--card-shadow-light});
+}

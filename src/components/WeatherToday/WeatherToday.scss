@@ -1,0 +1,28 @@
+.weather-today {
+  display: flex;
+  flex-wrap: wrap;
+  height: 45%;
+  width: 30%;
+  background: #4f4f4f;
+  border-radius: 20px;
+  box-shadow: 1px 2px 10px #818080;
+}
+
+.temp-day {
+  height: 70%;
+  width: 50%;
+  border: 1px solid white;
+}
+
+.weather-ico {
+  height: 70%;
+  width: 50%;
+  border: 1px solid white;
+}
+
+.city {
+    height: 15%;
+    width: 100%;
+}
+
+

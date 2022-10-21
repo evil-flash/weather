@@ -1,0 +1,43 @@
+@import "../../styles/variables.scss";
+
+.this_day {
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  background: var(#{--components-background-default});
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+
+.top_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+
+  .weather_ico {
+    width: 119px;
+    height: 119px;
+  }
+
+  .this_day__temp {
+    font-size: 96px;
+    font-weight: 500;
+    color: $font-color;
+  }
+
+  .this_day__name {
+    font-size: 40px;
+    color: var(#{--text-color-default});
+  }
+}
+
+.bottom_block {
+  .this_day__time,
+  .this_day__city {
+    font-size: 25px;
+    color: $base-color;
+    padding: 7px;
+  }
+}

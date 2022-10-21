@@ -1,0 +1,15 @@
+@import '~normalize-scss/sass/_normalize.scss';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import "../src/styles/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  font-family: "Montserrat", -apple-system, system-ui, sans-serif;
+}
+
+body {
+  background: var(#{--body-background-default});
+}

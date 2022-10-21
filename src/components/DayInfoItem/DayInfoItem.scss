@@ -1,0 +1,39 @@
+@import "../../styles/variables.scss";
+
+.day_info_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+
+  .icon,
+  .name {
+    margin-right: 20px;
+  }
+}
+
+.icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+    border-radius: 50%;
+}
+
+.name, .value {
+  font-size: 14px;
+}
+
+.name {
+    color: $base-color;
+}
+
+.value {
+  color: var(#{--text-color-default});
+}
