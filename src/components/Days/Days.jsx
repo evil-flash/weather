@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
 import Tabs from "./Tabs";
 
 import "./Days.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { actionWeather } from "../../store/actions/actionWeather";
 
 function Days() {
+  const dispatch = useDispatch();
+  const { weather, success } = useSelector((state) => state.weather);
+  useEffect(() => {
+    dispatch(actionWeather.getWeather());
+  }, []);
+
+    success &&
+    weather.map((i) => {
+      console.log(i.dt_txt);
+    });
+
+
+
   const days = [
     {
       day: "mnd",

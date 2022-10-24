@@ -7,7 +7,7 @@ export const actionType = {
   SET_WEATHER_ERROR: "SET_WEATHER_ERROR",
 };
 
-export const actienWeather = {
+export const actionWeather = {
   getWeather: () => async (dispath) => {
     dispath({ type: actionType.SET_WEATHER });
     axios
@@ -17,7 +17,7 @@ export const actienWeather = {
       .then((response) =>
         dispath({
           type: actionType.SET_WEATHER_SUCCES,
-          payload: response.data.results,
+          payload: response.data.list,
         })
       )
       .catch((err) => {
