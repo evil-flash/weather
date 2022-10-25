@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux/es/exports";
 import logo from "./../../assets/logo.svg";
 import invert from "./../../assets/invert.svg";
-import Select from "react-select";
+import { actionWeather } from "../../store/actions/actionWeather";
 
 import "./../Header/Header.scss";
 
 function Header() {
   const [theme, setTheme] = useState("light");
-
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
+  const dispatch = useDispatch();
 
   const colourStyles = {
     control: (styles) => ({
@@ -47,11 +43,11 @@ function Header() {
     variablesStyle.map((i) => {
       root.style.setProperty(`${i}-default`, `var(${i}-${theme})`);
     });
-    /*     root.style.setProperty(
-      "--body-background-default",
-      `var(--body-background-${theme})`
-    ); */
   }, [theme]);
+
+  const handleSetCity = (e) => {
+    dispatch(actionWeather.getWeather(e.target.value));
+  };
 
   return (
     <header className="header">
@@ -65,11 +61,7 @@ function Header() {
         <div className="theme" onClick={changeTheme}>
           <img src={invert} alt="invert" />
         </div>
-        <Select
-          defaultValue={options[0]}
-          styles={colourStyles}
-          options={options}
-        />
+        <input onChange={handleSetCity} />
       </div>
     </header>
   );

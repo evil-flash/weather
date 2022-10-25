@@ -17,6 +17,7 @@ function ThisDayInfo() {
     dispatch(actionWeather.getWeather());
   }, []);
 
+
   const items = [
     {
       icon: ico_temp,
@@ -33,7 +34,7 @@ function ThisDayInfo() {
     {
       icon: ico_rain,
       name: "Осадки",
-      value: "Без осадков",
+      value: success && weather[0].weather[0].description,
       key: "3",
     },
     {

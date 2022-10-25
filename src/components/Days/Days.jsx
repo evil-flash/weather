@@ -13,11 +13,17 @@ function Days() {
     dispatch(actionWeather.getWeather());
   }, []);
 
-    success &&
+   /*  success &&
     weather.map((i) => {
-      console.log(i.dt_txt);
-    });
+      console.log(i.dt_txt.slice(11,19));
+    }); */
+    const newArr = [];
+    success && weather.map((i)=>{
+      if(i.dt_txt.slice(11,19)==='21:00:00')
+      newArr.push(i)
+    })
 
+    console.log(newArr)
 
 
   const days = [
