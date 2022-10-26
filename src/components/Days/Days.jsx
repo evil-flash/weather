@@ -13,17 +13,6 @@ function Days() {
     dispatch(actionWeather.getWeather());
   }, []);
 
-   /*  success &&
-    weather.map((i) => {
-      console.log(i.dt_txt.slice(11,19));
-    }); */
-    const newArr = [];
-    success && weather.map((i)=>{
-      if(i.dt_txt.slice(11,19)==='21:00:00')
-      newArr.push(i)
-    })
-
-    console.log(newArr)
 
 
   const days = [
@@ -88,17 +77,20 @@ function Days() {
     <>
       <Tabs />
       <div className="days">
-        {days.map(({ day, day_info, icon_id, temp_day, temp_night, info }) => (
-          <Card
-            key={temp_day}
-            day={day}
-            day_info={day_info}
-            icon_id={icon_id}
-            temp_day={temp_day}
-            temp_night={temp_night}
-            info={info}
-          />
-        ))}
+        {success &&
+          weather.map((i) => {
+            if (i.dt_txt.slice(11, 19) === "21:00:00")
+              return (
+                <Card
+                  key={i.main.temp}
+                  day_info={i.dt}
+                  icon_id={i.weather[0].icon}
+                  temp_day={Math.round(i.main.temp)}
+                  temp_kf={i.main.temp + i.main.temp_kf}
+                  info={i.weather[0].description}
+                />
+              );
+          })}
       </div>
     </>
   );
