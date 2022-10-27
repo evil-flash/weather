@@ -46,7 +46,9 @@ function Header() {
   }, [theme]);
 
   const handleSetCity = (e) => {
-    dispatch(actionWeather.getWeather(e.target.value));
+    if (e.key === "Enter") {
+      dispatch(actionWeather.getWeather(e.target.value));
+    }
   };
 
   return (
@@ -61,7 +63,7 @@ function Header() {
         <div className="theme" onClick={changeTheme}>
           <img src={invert} alt="invert" />
         </div>
-        <input onChange={handleSetCity} />
+        <input onKeyUp={handleSetCity} />
       </div>
     </header>
   );

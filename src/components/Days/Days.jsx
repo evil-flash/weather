@@ -11,7 +11,7 @@ function Days() {
   const { weather, success } = useSelector((state) => state.weather);
   useEffect(() => {
     dispatch(actionWeather.getWeather());
-  }, []);
+  }, [dispatch]);
 
   const days = [
     {

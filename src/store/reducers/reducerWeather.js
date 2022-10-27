@@ -5,7 +5,7 @@ const initialState = {
   success: false,
   loading: false,
   error: false,
-  cityName: [],
+  cityName: '',
 };
 
 export const reducerWeather = (state = initialState, action) => {
@@ -30,6 +30,7 @@ export const reducerWeather = (state = initialState, action) => {
         ...state,
         error: true,
       };
+//get city name
     case actionType.SET_CITY:
       return {
         ...state,

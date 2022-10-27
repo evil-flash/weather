@@ -34,6 +34,7 @@ export const actionWeather = {
           });
         });
     },
+
   getCityName:
     (city = "Могилёв") =>
     async (dispath) => {
@@ -45,7 +46,7 @@ export const actionWeather = {
         .then((response) =>
           dispath({
             type: actionType.SET_CITY_SUCCES,
-            payload: response.data.city,
+            payload: response.data.city.name,
           })
         )
         .catch((err) => {

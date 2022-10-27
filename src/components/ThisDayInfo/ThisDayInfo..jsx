@@ -15,7 +15,7 @@ function ThisDayInfo() {
   const { weather, success } = useSelector((state) => state.weather);
   useEffect(() => {
     dispatch(actionWeather.getWeather());
-  }, []);
+  }, [dispatch]);
 
 
 

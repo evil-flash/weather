@@ -6,14 +6,14 @@ import "./../ThisDay/ThisDay.scss";
 
 function ThisDay() {
   const dispatch = useDispatch();
-  const { weather, success } = useSelector((state) => state.weather);
-  const cityName = useSelector((state) => state.cityName);
+  const { weather, success, cityName } = useSelector((state) => state.weather);
   useEffect(() => {
     dispatch(actionWeather.getWeather());
     dispatch(actionWeather.getCityName());
   }, []);
 
-  console.log(cityName);
+
+  console.log(cityName)
 
   return (
     <div className="this_day">
