@@ -10,22 +10,6 @@ function Header() {
   const [theme, setTheme] = useState("light");
   const dispatch = useDispatch();
 
-  const colourStyles = {
-    control: (styles) => ({
-      ...styles,
-      backgroundColor:
-        theme === "light" ? "rgba(71, 147, 255, 0.2)" : "#4f4f4f",
-      width: "145px",
-      height: "37px",
-      border: "none",
-      borderRadius: "10px",
-    }),
-    singleValue: (styles) => ({
-      ...styles,
-      color: theme === "light" ? "#000" : "#fff",
-    }),
-  };
-
   const changeTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
