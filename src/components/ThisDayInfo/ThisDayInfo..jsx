@@ -18,17 +18,26 @@ function ThisDayInfo() {
   }, []);
 
 
+
+
+
   const items = [
     {
       icon: ico_temp,
       name: "Температура",
-      value: `${success && Math.round(weather[0].main.temp)}° - ощущается как ${Math.round(weather[0]?.main.temp+weather[0]?.main.temp_kf)}°`,
+      value: `${
+        success && Math.round(weather[0].main.temp)
+      }° - ощущается как ${Math.round(
+        weather[0]?.main.temp + weather[0]?.main.temp_kf
+      )}°`,
       key: "1",
     },
     {
       icon: ico_pressure,
       name: "Давление",
-      value: `${success && Math.round(weather[0].main.pressure*0.750063755419211)} мм ртутного столба - нормальное`,
+      value: `${
+        success && Math.round(weather[0].main.pressure * 0.750063755419211)
+      } мм ртутного столба - нормальное`,
       key: "2",
     },
     {
@@ -38,9 +47,9 @@ function ThisDayInfo() {
       key: "3",
     },
     {
-      icon: ico_wind, 
+      icon: ico_wind,
       name: "Ветер",
-      value: `${success && Math.round(weather[0].wind.speed)} м/с юго-запад - легкий ветер`,
+      value: `${success && Math.round(weather[0].wind.speed)} м/с`,
       key: "4",
     },
   ];

@@ -7,10 +7,13 @@ import "./../ThisDay/ThisDay.scss";
 function ThisDay() {
   const dispatch = useDispatch();
   const { weather, success } = useSelector((state) => state.weather);
+  const cityName = useSelector((state) => state.cityName);
   useEffect(() => {
     dispatch(actionWeather.getWeather());
+    dispatch(actionWeather.getCityName());
   }, []);
 
+  console.log(cityName);
 
   return (
     <div className="this_day">
@@ -21,7 +24,16 @@ function ThisDay() {
           </div>
           <div className="this_day__name">Сегодня</div>
         </div>
-        <img className="weather_ico" src={success && `http://openweathermap.org/img/wn/${success && weather[0].weather[0].icon}@2x.png`} alt="weather_ico" />
+        <img
+          className="weather_ico"
+          src={
+            success &&
+            `http://openweathermap.org/img/wn/${
+              success && weather[0].weather[0].icon
+            }@2x.png`
+          }
+          alt="weather_ico"
+        />
       </div>
       <div className="bottom_block">
         <div className="this_day__time">

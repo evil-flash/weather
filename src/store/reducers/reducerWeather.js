@@ -5,6 +5,7 @@ const initialState = {
   success: false,
   loading: false,
   error: false,
+  cityName: [],
 };
 
 export const reducerWeather = (state = initialState, action) => {
@@ -25,6 +26,25 @@ export const reducerWeather = (state = initialState, action) => {
         loading: false,
       };
     case actionType.SET_WEATHER_ERROR:
+      return {
+        ...state,
+        error: true,
+      };
+    case actionType.SET_CITY:
+      return {
+        ...state,
+        cityName: [],
+        success: false,
+        loading: true,
+      };
+    case actionType.SET_CITY_SUCCES:
+      return {
+        ...state,
+        cityName: payload,
+        success: true,
+        loading: false,
+      };
+    case actionType.SET_CITY_ERROR:
       return {
         ...state,
         error: true,
