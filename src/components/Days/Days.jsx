@@ -13,71 +13,14 @@ function Days() {
     dispatch(actionWeather.getWeather());
   }, [dispatch]);
 
-  const days = [
-    {
-      day: "mnd",
-      day_info: "16 окт",
-      icon_id: "rain",
-      temp_day: "18",
-      temp_night: "15",
-      info: "облачно",
-    },
-    {
-      day: "mnd",
-      day_info: "16 окт",
-      icon_id: "rain",
-      temp_day: "18",
-      temp_night: "15",
-      info: "облачно",
-    },
-    {
-      day: "mnd",
-      day_info: "16 окт",
-      icon_id: "rain",
-      temp_day: "18",
-      temp_night: "15",
-      info: "облачно",
-    },
-    {
-      day: "mnd",
-      day_info: "16 окт",
-      icon_id: "rain",
-      temp_day: "18",
-      temp_night: "15",
-      info: "облачно",
-    },
-    {
-      day: "mnd",
-      day_info: "16 окт",
-      icon_id: "rain",
-      temp_day: "18",
-      temp_night: "15",
-      info: "облачно",
-    },
-    {
-      day: "mnd",
-      day_info: "16 окт",
-      icon_id: "rain",
-      temp_day: "18",
-      temp_night: "15",
-      info: "облачно",
-    },
-    {
-      day: "mnd",
-      day_info: "16 окт",
-      icon_id: "rain",
-      temp_day: "18",
-      temp_night: "15",
-      info: "облачно",
-    },
-  ];
+
   return (
     <>
       <Tabs />
       <div className="days">
         {success &&
           weather.map(({ dt_txt, main, dt, weather }) => {
-            if (dt_txt.slice(11, 19) === "21:00:00")
+            if (dt_txt.slice(11, 19) === "12:00:00")
               return (
                 <Card
                   key={main.temp}

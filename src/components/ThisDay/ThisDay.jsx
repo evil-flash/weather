@@ -10,10 +10,9 @@ function ThisDay() {
   useEffect(() => {
     dispatch(actionWeather.getWeather());
     dispatch(actionWeather.getCityName());
-  }, []);
+  }, [dispatch]);
 
 
-  console.log(cityName)
 
   return (
     <div className="this_day">
@@ -42,7 +41,7 @@ function ThisDay() {
             <Clock />
           </span>
         </div>
-        <div className="this_day__city">Могилёв</div>
+        <div className="this_day__city">{cityName}</div>
       </div>
     </div>
   );

@@ -24,3 +24,16 @@
   font-weight: bold;
   color: $font-color;
 }
+
+.cityInput {
+  width: 194px;
+  height: 37px;
+  border-radius: 10px;
+  background: var(#{--card-background-default});
+  color: var(#{--text-color-default});
+  border: 0;
+  font-size: 18px;
+  &:hover {
+    box-shadow: var(#{--card-shadow-default});
+  }
+}

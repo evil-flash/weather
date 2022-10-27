@@ -5,7 +5,7 @@ const initialState = {
   success: false,
   loading: false,
   error: false,
-  cityName: '',
+  cityName: [],
 };
 
 export const reducerWeather = (state = initialState, action) => {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_KEY } from "../../config";
+import { API_KEY } from "../../config.js";
 
 export const actionType = {
   SET_WEATHER: "SET_WEATHER",

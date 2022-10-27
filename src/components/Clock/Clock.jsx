@@ -12,7 +12,7 @@ function Clock() {
         clearInterval(ref.current)
     }
   }, []);
-  return <div>{time}</div>;
+  return <div>{time.slice(0,5)}</div>;
 }
 
 export default Clock;
